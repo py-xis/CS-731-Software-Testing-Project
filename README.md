@@ -45,16 +45,12 @@
 ## 3. Individual Contributions
 
 **Aryan Singhal (IMT2022036):**
-- Modules: `repository`, `result`
+- Modules: `repository`, `core`
 - Test cases for above modules
 
 **Pranav Kulkarni (IMT2022053):**
 - Modules: `model`, `analytics`, `engine`
 - Test cases for above modules
-
-**Implemented Together:**
-- Module: `core`
-- Integration test cases
 
 ---
 
