@@ -1,0 +1,15 @@
+edu/courseregistration/model/Enrollment.class
+edu/courseregistration/engine/SeatAllocator.class
+edu/courseregistration/repository/EnrollmentRepository.class
+edu/courseregistration/repository/StudentRepository.class
+edu/courseregistration/engine/PrerequisiteEngine.class
+edu/courseregistration/repository/CourseRepository.class
+edu/courseregistration/result/ValidationResult.class
+edu/courseregistration/core/Registrar.class
+edu/courseregistration/result/RegistrationResult.class
+edu/courseregistration/model/EnrollmentStatus.class
+edu/courseregistration/result/AllocationResult.class
+edu/courseregistration/model/Course.class
+edu/courseregistration/analytics/EnrollmentStatistics.class
+edu/courseregistration/model/Student.class
+edu/courseregistration/engine/WaitlistManager.class

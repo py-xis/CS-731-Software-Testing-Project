@@ -1,0 +1,3163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>PrerequisiteEngine.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package edu.courseregistration.engine;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import edu.courseregistration.model.Course;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import edu.courseregistration.model.Enrollment;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import edu.courseregistration.model.Student;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import edu.courseregistration.repository.CourseRepository;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import edu.courseregistration.repository.StudentRepository;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import edu.courseregistration.result.ValidationResult;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.List;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Set;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Engine for validating course prerequisites and corequisites.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Contains complex boolean logic ideal for mutation testing.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class PrerequisiteEngine {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final CourseRepository courseRepository;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final StudentRepository studentRepository;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public PrerequisiteEngine(CourseRepository courseRepository, StudentRepository studentRepository) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.courseRepository = courseRepository;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.studentRepository = studentRepository;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Checks if a student has completed all prerequisites for a course.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Complex boolean logic with multiple conditions.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param student the student attempting to enroll</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param course  the course to check prerequisites for</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return ValidationResult indicating whether prerequisites are satisfied</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public ValidationResult checkPrerequisites(Student student, Course course) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // If course has no prerequisites, validation passes</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_36'/>
+36
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_36'>3</a>
+<span>
+1. checkPrerequisites : removed call to edu/courseregistration/model/Course::getPrerequisites &rarr; KILLED<br/>
+2. checkPrerequisites : removed call to edu/courseregistration/model/Course::getPrerequisites &rarr; KILLED<br/>
+3. checkPrerequisites : removed call to java/util/List::isEmpty &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (course.getPrerequisites() == null || course.getPrerequisites().isEmpty()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_37'/>
+37
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_37'>2</a>
+<span>
+1. checkPrerequisites : removed call to edu/courseregistration/result/ValidationResult::success &rarr; KILLED<br/>
+2. checkPrerequisites : replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkPrerequisites &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return ValidationResult.success(&#34;No prerequisites required&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_40'/>
+40
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_40'>1</a>
+<span>
+1. checkPrerequisites : removed call to edu/courseregistration/model/Student::getCompletedCourses &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        Set&#60;String&#62; completedCourses = student.getCompletedCourses();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_41'/>
+41
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_41'>1</a>
+<span>
+1. checkPrerequisites : removed call to edu/courseregistration/model/Course::getPrerequisites &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        List&#60;String&#62; requiredPrereqs = course.getPrerequisites();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // Check each prerequisite</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        for (String prereqId : requiredPrereqs) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_45'/>
+45
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_45'>1</a>
+<span>
+1. checkPrerequisites : removed call to java/util/Set::contains &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (!completedCourses.contains(prereqId)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_46'/>
+46
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_46'>2</a>
+<span>
+1. checkPrerequisites : replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkPrerequisites &rarr; KILLED<br/>
+2. checkPrerequisites : removed call to edu/courseregistration/result/ValidationResult::failure &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                return ValidationResult.failure(&#34;Missing prerequisite: &#34; + prereqId);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_50'/>
+50
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_50'>2</a>
+<span>
+1. checkPrerequisites : removed call to edu/courseregistration/result/ValidationResult::success &rarr; KILLED<br/>
+2. checkPrerequisites : replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkPrerequisites &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return ValidationResult.success(&#34;All prerequisites satisfied&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Checks if a student is currently enrolled in or has completed corequisites.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * More complex logic with current enrollments consideration.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param student            the student attempting to enroll</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param course             the course to check corequisites for</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param currentEnrollments the student&#39;s current enrollments this semester</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return ValidationResult indicating whether corequisites are satisfied</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public ValidationResult checkCorequisites(Student student, Course course,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            List&#60;Enrollment&#62; currentEnrollments) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // If course has no corequisites, validation passes</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_65'/>
+65
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_65'>3</a>
+<span>
+1. checkCorequisites : removed call to java/util/List::isEmpty &rarr; KILLED<br/>
+2. checkCorequisites : removed call to edu/courseregistration/model/Course::getCorequisites &rarr; KILLED<br/>
+3. checkCorequisites : removed call to edu/courseregistration/model/Course::getCorequisites &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (course.getCorequisites() == null || course.getCorequisites().isEmpty()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_66'/>
+66
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_66'>2</a>
+<span>
+1. checkCorequisites : removed call to edu/courseregistration/result/ValidationResult::success &rarr; KILLED<br/>
+2. checkCorequisites : replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkCorequisites &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return ValidationResult.success(&#34;No corequisites required&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_69'/>
+69
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_69'>1</a>
+<span>
+1. checkCorequisites : removed call to edu/courseregistration/model/Student::getCompletedCourses &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        Set&#60;String&#62; completedCourses = student.getCompletedCourses();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_70'/>
+70
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_70'>1</a>
+<span>
+1. checkCorequisites : removed call to edu/courseregistration/model/Course::getCorequisites &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        List&#60;String&#62; requiredCoreqs = course.getCorequisites();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // Check each corequisite</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        for (String coreqId : requiredCoreqs) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            // Check if already completed</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_75'/>
+75
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_75'>1</a>
+<span>
+1. checkCorequisites : removed call to java/util/Set::contains &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (completedCourses.contains(coreqId)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                continue;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            // Check if currently enrolled</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            boolean enrolledInCoreq = false;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            for (Enrollment enrollment : currentEnrollments) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_82'/>
+82
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_82'>3</a>
+<span>
+1. checkCorequisites : removed call to edu/courseregistration/model/Enrollment::isEnrolled &rarr; KILLED<br/>
+2. checkCorequisites : removed call to edu/courseregistration/model/Enrollment::getCourseId &rarr; KILLED<br/>
+3. checkCorequisites : removed call to java/lang/String::equals &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (enrollment.getCourseId().equals(coreqId) &#38;&#38; enrollment.isEnrolled()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    enrolledInCoreq = true;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    break;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            if (!enrolledInCoreq) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_89'/>
+89
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_89'>2</a>
+<span>
+1. checkCorequisites : replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkCorequisites &rarr; KILLED<br/>
+2. checkCorequisites : removed call to edu/courseregistration/result/ValidationResult::failure &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                return ValidationResult.failure(&#34;Missing corequisite: &#34; + coreqId);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_93'/>
+93
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_93'>2</a>
+<span>
+1. checkCorequisites : removed call to edu/courseregistration/result/ValidationResult::success &rarr; KILLED<br/>
+2. checkCorequisites : replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkCorequisites &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return ValidationResult.success(&#34;All corequisites satisfied&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Validates if a student meets all academic requirements for a course.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_98'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Combines multiple validation conditions.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param student            the student</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_101'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param course             the course</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_102'/>
+102
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_102'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param currentEnrollments the student&#39;s current enrollments</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return ValidationResult with overall validation status</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_104'/>
+104
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_104'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_105'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public ValidationResult validateAllRequirements(Student student, Course course,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_106'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            List&#60;Enrollment&#62; currentEnrollments) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_107'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // Check prerequisites first</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_108'/>
+108
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_108'>1</a>
+<span>
+1. validateAllRequirements : removed call to edu/courseregistration/engine/PrerequisiteEngine::checkPrerequisites &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        ValidationResult prereqResult = checkPrerequisites(student, course);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_109'/>
+109
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_109'>1</a>
+<span>
+1. validateAllRequirements : removed call to edu/courseregistration/result/ValidationResult::isValid &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (!prereqResult.isValid()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_110'/>
+110
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_110'>1</a>
+<span>
+1. validateAllRequirements : replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::validateAllRequirements &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return prereqResult;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_111'/>
+111
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_111'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_113'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // Check corequisites</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_114'/>
+114
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_114'>1</a>
+<span>
+1. validateAllRequirements : removed call to edu/courseregistration/engine/PrerequisiteEngine::checkCorequisites &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        ValidationResult coreqResult = checkCorequisites(student, course, currentEnrollments);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_115'/>
+115
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_115'>1</a>
+<span>
+1. validateAllRequirements : removed call to edu/courseregistration/result/ValidationResult::isValid &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (!coreqResult.isValid()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_116'/>
+116
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_116'>1</a>
+<span>
+1. validateAllRequirements : replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::validateAllRequirements &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return coreqResult;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_117'/>
+117
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_117'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_119'/>
+119
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_119'>2</a>
+<span>
+1. validateAllRequirements : removed call to edu/courseregistration/result/ValidationResult::success &rarr; KILLED<br/>
+2. validateAllRequirements : replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::validateAllRequirements &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return ValidationResult.success(&#34;All requirements satisfied&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_121'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_122'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_123'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Checks if student has the minimum semester requirement for advanced courses.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_124'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Contains boundary conditions ideal for mutation testing.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_125'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_126'/>
+126
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_126'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param student     the student</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_127'/>
+127
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_127'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param course      the course</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param minSemester minimum semester required</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_129'/>
+129
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_129'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return true if student meets semester requirement</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_130'/>
+130
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_130'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean checkSemesterRequirement(Student student, Course course, int minSemester) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // Boundary condition: &#62;= vs &#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_133'/>
+133
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_133'>2</a>
+<span>
+1. checkSemesterRequirement : replaced boolean return with true for edu/courseregistration/engine/PrerequisiteEngine::checkSemesterRequirement &rarr; KILLED<br/>
+2. checkSemesterRequirement : removed call to edu/courseregistration/model/Student::getSemester &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return student.getSemester() &#62;= minSemester;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_134'/>
+134
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_134'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_135'/>
+135
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_135'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_136'/>
+136
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_136'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_137'/>
+137
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_137'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Validates credit limit for a student.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_138'/>
+138
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_138'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Contains arithmetic operations and comparisons.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_139'/>
+139
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_139'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_140'/>
+140
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_140'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param student           the student</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param additionalCredits credits to add</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_142'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param maxCredits        maximum allowed credits</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_143'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return ValidationResult indicating if credit limit is satisfied</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_144'/>
+144
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_144'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_145'/>
+145
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_145'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public ValidationResult checkCreditLimit(Student student, int additionalCredits, int maxCredits) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_146'/>
+146
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_146'>1</a>
+<span>
+1. checkCreditLimit : removed call to edu/courseregistration/model/Student::getCurrentCredits &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        int totalCredits = student.getCurrentCredits() + additionalCredits;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_147'/>
+147
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_147'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_148'/>
+148
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_148'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // Boundary condition: &#60;= vs &#60;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_149'/>
+149
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_149'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        if (totalCredits &#60;= maxCredits) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_150'/>
+150
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_150'>2</a>
+<span>
+1. checkCreditLimit : replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkCreditLimit &rarr; KILLED<br/>
+2. checkCreditLimit : removed call to edu/courseregistration/result/ValidationResult::success &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return ValidationResult.success(&#34;Credit limit satisfied&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_151'/>
+151
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_151'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_152'/>
+152
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_152'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_153'/>
+153
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_153'>2</a>
+<span>
+1. checkCreditLimit : replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkCreditLimit &rarr; KILLED<br/>
+2. checkCreditLimit : removed call to edu/courseregistration/result/ValidationResult::failure &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return ValidationResult.failure(&#34;Credit limit exceeded: &#34; + totalCredits + &#34; &#62; &#34; + maxCredits);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_154'/>
+154
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_154'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_155'/>
+155
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_155'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_156'/>
+156
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_156'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_157'/>
+157
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_157'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Complex validation with multiple AND/OR conditions.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_158'/>
+158
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_158'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Ideal for mutation operators that change boolean connectives.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_159'/>
+159
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_159'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_160'/>
+160
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_160'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param student     the student</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_161'/>
+161
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_161'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param course      the course</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_162'/>
+162
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_162'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param minGPA      minimum GPA required</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_163'/>
+163
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_163'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param minSemester minimum semester required</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_164'/>
+164
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_164'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return true if student meets complex requirements</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_165'/>
+165
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_165'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_166'/>
+166
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_166'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean checkAdvancedCourseEligibility(Student student, Course course,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_167'/>
+167
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_167'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            double minGPA, int minSemester) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_168'/>
+168
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_168'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // Complex boolean expression: (semester &#62;= min) AND (GPA &#62;= min OR has prereq)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_169'/>
+169
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_169'>1</a>
+<span>
+1. checkAdvancedCourseEligibility : removed call to edu/courseregistration/model/Student::getSemester &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        boolean meetsBasicRequirement = student.getSemester() &#62;= minSemester;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_170'/>
+170
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_170'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_171'/>
+171
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_171'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        if (!meetsBasicRequirement) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_172'/>
+172
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_172'>1</a>
+<span>
+1. checkAdvancedCourseEligibility : replaced boolean return with true for edu/courseregistration/engine/PrerequisiteEngine::checkAdvancedCourseEligibility &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return false;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_173'/>
+173
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_173'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_174'/>
+174
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_174'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_175'/>
+175
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_175'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // For advanced courses, either high semester count OR completed prerequisites</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_176'/>
+176
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_176'>1</a>
+<span>
+1. checkAdvancedCourseEligibility : removed call to edu/courseregistration/model/Student::getSemester &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        boolean hasHighSemester = student.getSemester() &#62; minSemester + 2;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_177'/>
+177
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_177'>2</a>
+<span>
+1. checkAdvancedCourseEligibility : removed call to edu/courseregistration/engine/PrerequisiteEngine::checkPrerequisites &rarr; KILLED<br/>
+2. checkAdvancedCourseEligibility : removed call to edu/courseregistration/result/ValidationResult::isValid &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        boolean hasAllPrereqs = checkPrerequisites(student, course).isValid();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_178'/>
+178
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_178'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_179'/>
+179
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_179'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // Boolean logic mutation target: || vs &#38;&#38;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_180'/>
+180
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_180'>1</a>
+<span>
+1. checkAdvancedCourseEligibility : replaced boolean return with true for edu/courseregistration/engine/PrerequisiteEngine::checkAdvancedCourseEligibility &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return hasHighSemester || hasAllPrereqs;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_181'/>
+181
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_181'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63a84bb6_182'/>
+182
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_182'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_36'>36</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_36'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkPrerequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_NoPrerequsites_Success()]</span></span> removed call to edu/courseregistration/model/Course::getPrerequisites &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkPrerequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_SinglePrereqMissing_Failure()]</span></span> removed call to edu/courseregistration/model/Course::getPrerequisites &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkPrerequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_NoPrerequsites_Success()]</span></span> removed call to java/util/List::isEmpty &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_37'>37</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_37'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkPrerequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_NoPrerequsites_Success()]</span></span> removed call to edu/courseregistration/result/ValidationResult::success &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkPrerequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_NoPrerequsites_Success()]</span></span> replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkPrerequisites &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_40'>40</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_40'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkPrerequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_MultiplePrereqsOneMissing_Failure()]</span></span> removed call to edu/courseregistration/model/Student::getCompletedCourses &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_41'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkPrerequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_MultiplePrereqsOneMissing_Failure()]</span></span> removed call to edu/courseregistration/model/Course::getPrerequisites &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_45'>45</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_45'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkPrerequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_MultiplePrereqsOneMissing_Failure()]</span></span> removed call to java/util/Set::contains &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_46'>46</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_46'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkPrerequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_SinglePrereqMissing_Failure()]</span></span> replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkPrerequisites &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkPrerequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_SinglePrereqMissing_Failure()]</span></span> removed call to edu/courseregistration/result/ValidationResult::failure &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_50'>50</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_50'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkPrerequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_MultiplePrereqsAllSatisfied_Success()]</span></span> removed call to edu/courseregistration/result/ValidationResult::success &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkPrerequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_MultiplePrereqsAllSatisfied_Success()]</span></span> replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkPrerequisites &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_65'>65</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_65'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_NoCorequisites_Success()]</span></span> removed call to java/util/List::isEmpty &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqWaitlisted_Failure()]</span></span> removed call to edu/courseregistration/model/Course::getCorequisites &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_NoCorequisites_Success()]</span></span> removed call to edu/courseregistration/model/Course::getCorequisites &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_66'>66</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_66'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_NoCorequisites_Success()]</span></span> removed call to edu/courseregistration/result/ValidationResult::success &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_NoCorequisites_Success()]</span></span> replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkCorequisites &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_69'>69</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_69'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqAlreadyCompleted_Success()]</span></span> removed call to edu/courseregistration/model/Student::getCompletedCourses &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_70'>70</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_70'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqAlreadyCompleted_Success()]</span></span> removed call to edu/courseregistration/model/Course::getCorequisites &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_75'>75</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_75'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqAlreadyCompleted_Success()]</span></span> removed call to java/util/Set::contains &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_82'>82</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_82'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqCurrentlyEnrolled_Success()]</span></span> removed call to edu/courseregistration/model/Enrollment::isEnrolled &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqCurrentlyEnrolled_Success()]</span></span> removed call to edu/courseregistration/model/Enrollment::getCourseId &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqCurrentlyEnrolled_Success()]</span></span> removed call to java/lang/String::equals &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_89'>89</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_89'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqNotMet_Failure()]</span></span> replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkCorequisites &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqNotMet_Failure()]</span></span> removed call to edu/courseregistration/result/ValidationResult::failure &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_93'>93</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_93'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqAlreadyCompleted_Success()]</span></span> removed call to edu/courseregistration/result/ValidationResult::success &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkCorequisites<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqAlreadyCompleted_Success()]</span></span> replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkCorequisites &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_108'>108</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_108'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAllRequirements<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testValidateAllRequirements_PrereqFails_Failure()]</span></span> removed call to edu/courseregistration/engine/PrerequisiteEngine::checkPrerequisites &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_109'>109</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_109'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAllRequirements<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testValidateAllRequirements_CoreqFails_Failure()]</span></span> removed call to edu/courseregistration/result/ValidationResult::isValid &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_110'>110</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_110'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAllRequirements<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testValidateAllRequirements_PrereqFails_Failure()]</span></span> replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::validateAllRequirements &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_114'>114</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_114'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAllRequirements<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testValidateAllRequirements_CoreqFails_Failure()]</span></span> removed call to edu/courseregistration/engine/PrerequisiteEngine::checkCorequisites &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_115'>115</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_115'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAllRequirements<br/><b>Killed by : </b>none</span></span> removed call to edu/courseregistration/result/ValidationResult::isValid &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_116'>116</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_116'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAllRequirements<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testValidateAllRequirements_CoreqFails_Failure()]</span></span> replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::validateAllRequirements &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_119'>119</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_119'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>validateAllRequirements<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testValidateAllRequirements_BothSatisfied_Success()]</span></span> removed call to edu/courseregistration/result/ValidationResult::success &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>validateAllRequirements<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testValidateAllRequirements_BothSatisfied_Success()]</span></span> replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::validateAllRequirements &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_133'>133</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_133'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkSemesterRequirement<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckSemesterRequirement_Boundary_OneBelow_Failure()]</span></span> replaced boolean return with true for edu/courseregistration/engine/PrerequisiteEngine::checkSemesterRequirement &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkSemesterRequirement<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckSemesterRequirement_ExactlyAtMinimum_Success()]</span></span> removed call to edu/courseregistration/model/Student::getSemester &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_146'>146</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_146'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkCreditLimit<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCreditLimit_Boundary_OneOverLimit_Failure()]</span></span> removed call to edu/courseregistration/model/Student::getCurrentCredits &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_150'>150</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_150'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkCreditLimit<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCreditLimit_UnderLimit_Success()]</span></span> replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkCreditLimit &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkCreditLimit<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCreditLimit_UnderLimit_Success()]</span></span> removed call to edu/courseregistration/result/ValidationResult::success &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_153'>153</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_153'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkCreditLimit<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCreditLimit_Boundary_OneOverLimit_Failure()]</span></span> replaced return value with null for edu/courseregistration/engine/PrerequisiteEngine::checkCreditLimit &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkCreditLimit<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCreditLimit_Boundary_OneOverLimit_Failure()]</span></span> removed call to edu/courseregistration/result/ValidationResult::failure &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_169'>169</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_169'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkAdvancedCourseEligibility<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckAdvancedEligibility_HighSemesterNoPrereqs_Success()]</span></span> removed call to edu/courseregistration/model/Student::getSemester &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_172'>172</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_172'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkAdvancedCourseEligibility<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckAdvancedEligibility_BelowMinSemester_Failure()]</span></span> replaced boolean return with true for edu/courseregistration/engine/PrerequisiteEngine::checkAdvancedCourseEligibility &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_176'>176</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_176'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkAdvancedCourseEligibility<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckAdvancedEligibility_HighSemesterNoPrereqs_Success()]</span></span> removed call to edu/courseregistration/model/Student::getSemester &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_177'>177</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_177'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkAdvancedCourseEligibility<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckAdvancedEligibility_HighSemesterNoPrereqs_Success()]</span></span> removed call to edu/courseregistration/engine/PrerequisiteEngine::checkPrerequisites &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkAdvancedCourseEligibility<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckAdvancedEligibility_MeetsBasicAndHasPrereqs_Success()]</span></span> removed call to edu/courseregistration/result/ValidationResult::isValid &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63a84bb6_180'>180</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63a84bb6_180'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkAdvancedCourseEligibility<br/><b>Killed by : </b>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckAdvancedEligibility_ExactMinSemesterNoPrereqs_Failure()]</span></span> replaced boolean return with true for edu/courseregistration/engine/PrerequisiteEngine::checkAdvancedCourseEligibility &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>NON_VOID_METHOD_CALLS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_NoPrerequsites_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_EmptyPrerequisiteList_Success()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testRegisterStudent_MissingCorequisite_Failure()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testInvariant_EnrolledNeverExceedsCapacity()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testRegisterStudent_HappyPath_Success()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testRegisterStudent_AlreadyEnrolled_Failure()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testRegisterStudent_BothFullWaitlistFull_Failure()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testRegisterStudent_CourseFull_AddedToWaitlist()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testGetWaitlistPosition()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testInvariant_WaitlistNeverExceedsCapacity()] (2 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testDropCourse_Enrolled_Success()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testDropCourse_Waitlisted_RemovedFromWaitlist()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testDropCourse_WithWaitlistPromotion_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testValidateAllRequirements_BothSatisfied_Success()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testCheckEligibility_Eligible_Valid()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testRegisterStudent_WithPrerequisites_Success()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testComplexScenario_MultipleStudentsMultipleConstraints()] (3 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testValidateAllRequirements_PrereqFails_Failure()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testValidateAllRequirements_CoreqFails_Failure()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testCheckEligibility_NotEligible_Invalid()] (0 ms)</li><li>edu.courseregistration.core.RegistrarTest.[engine:junit-jupiter]/[class:edu.courseregistration.core.RegistrarTest]/[method:testRegisterStudent_MissingPrerequisite_Failure()] (1 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCreditLimit_UnderLimit_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCreditLimit_ExactlyAtLimit_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckAdvancedEligibility_HighSemesterNoPrereqs_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckAdvancedEligibility_MeetsBasicAndHasPrereqs_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckAdvancedEligibility_BoundaryHighSemester_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckAdvancedEligibility_ExactMinSemesterNoPrereqs_Failure()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqNotMet_Failure()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqWaitlisted_Failure()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_NoCorequisites_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqAlreadyCompleted_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCorequisites_CoreqCurrentlyEnrolled_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckSemesterRequirement_ExactlyAtMinimum_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckSemesterRequirement_Boundary_OneBelow_Failure()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckSemesterRequirement_BelowMinimum_Failure()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckSemesterRequirement_AboveMinimum_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCreditLimit_Boundary_OneOverLimit_Failure()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckCreditLimit_OverLimit_Failure()] (1 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_MultiplePrereqsAllSatisfied_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_SinglePrereqMissing_Failure()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_MultiplePrereqsOneMissing_Failure()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckPrerequisites_SinglePrereqSatisfied_Success()] (0 ms)</li><li>edu.courseregistration.engine.PrerequisiteEngineTest.[engine:junit-jupiter]/[class:edu.courseregistration.engine.PrerequisiteEngineTest]/[method:testCheckAdvancedEligibility_BelowMinSemester_Failure()] (0 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.15.3
+
+</body>
+</html>

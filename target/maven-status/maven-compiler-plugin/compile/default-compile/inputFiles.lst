@@ -1,0 +1,15 @@
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/engine/WaitlistManager.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/result/ValidationResult.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/analytics/EnrollmentStatistics.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/core/Registrar.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/result/RegistrationResult.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/model/EnrollmentStatus.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/engine/PrerequisiteEngine.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/engine/SeatAllocator.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/repository/EnrollmentRepository.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/result/AllocationResult.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/model/Course.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/repository/CourseRepository.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/model/Enrollment.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/repository/StudentRepository.java
+/Users/pranav_kulkarni/Desktop/Software Testing/Project 3/src/main/java/edu/courseregistration/model/Student.java

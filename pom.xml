@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>edu.courseregistration</groupId>
+    <artifactId>course-registration-system</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>Course Registration System</name>
+    <description>A course registration system for mutation testing project</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <junit.version>5.10.0</junit.version>
+        <pitest.version>1.15.3</pitest.version>
+    </properties>
+
+    <dependencies>
+        <!-- JUnit 5 for unit testing -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Surefire Plugin for running tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+
+            <!-- PIT Mutation Testing Plugin -->
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>${pitest.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest-junit5-plugin</artifactId>
+                        <version>1.2.1</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <outputFormats>
+                        <outputFormat>HTML</outputFormat>
+                        <outputFormat>XML</outputFormat>
+                    </outputFormats>
+                    <timestampedReports>false</timestampedReports>
+                    <verbose>true</verbose>
+                </configuration>
+                <executions>
+                    <!-- Unit-Level Mutation Testing -->
+                    <execution>
+                        <id>unit-mutation-testing</id>
+                        <phase>none</phase>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                        <configuration>
+                            <targetClasses>
+                                <param>edu.courseregistration.engine.*</param>
+                                <param>edu.courseregistration.model.*</param>
+                                <param>edu.courseregistration.repository.*</param>
+                                <param>edu.courseregistration.analytics.*</param>
+                            </targetClasses>
+                            <targetTests>
+                                <param>edu.courseregistration.engine.*Test</param>
+                                <param>edu.courseregistration.model.*Test</param>
+                                <param>edu.courseregistration.repository.*Test</param>
+                                <param>edu.courseregistration.analytics.*Test</param>
+                            </targetTests>
+                            <mutators>
+                                <!--Unit-Level Mutation Operators -->
+                                <mutator>CONDITIONALS_BOUNDARY</mutator>
+                                <mutator>NEGATE_CONDITIONALS</mutator>
+                                <mutator>MATH</mutator>
+                                <mutator>INCREMENTS</mutator>                            </mutators>
+                            <reportsDirectory>${project.build.directory}/pit-reports/unit</reportsDirectory>
+                        </configuration>
+                    </execution>
+
+                    <!-- Integration-Level Mutation Testing -->
+                    <execution>
+                        <id>integration-mutation-testing</id>
+                        <phase>none</phase>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                        <configuration>
+                            <targetClasses>
+                                <param>edu.courseregistration.core.*</param>
+                                <param>edu.courseregistration.engine.*</param>
+                            </targetClasses>
+                            <targetTests>
+                                <param>edu.courseregistration.core.*Test</param>
+                                <param>edu.courseregistration.engine.*Test</param>
+                            </targetTests>
+                            <mutators>
+                                <!--Integration-Level Mutation Operators (4) -->
+                                <mutator>FALSE_RETURNS</mutator>
+                                <mutator>TRUE_RETURNS</mutator>
+                                <mutator>NULL_RETURNS</mutator>
+                                <mutator>PRIMITIVE_RETURNS</mutator>
+                                <mutator>NON_VOID_METHOD_CALLS</mutator>
+                                <mutator>EMPTY_RETURNS</mutator>
+                            </mutators>
+                            <reportsDirectory>${project.build.directory}/pit-reports/integration</reportsDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

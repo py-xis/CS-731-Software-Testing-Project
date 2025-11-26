@@ -1,0 +1,11 @@
+edu/courseregistration/engine/PrerequisiteEngineTest.class
+edu/courseregistration/repository/StudentRepositoryTest.class
+edu/courseregistration/model/StudentTest.class
+edu/courseregistration/repository/CourseRepositoryTest.class
+edu/courseregistration/core/RegistrarTest.class
+edu/courseregistration/model/EnrollmentTest.class
+edu/courseregistration/engine/SeatAllocatorTest.class
+edu/courseregistration/analytics/EnrollmentStatisticsTest.class
+edu/courseregistration/engine/WaitlistManagerTest.class
+edu/courseregistration/repository/EnrollmentRepositoryTest.class
+edu/courseregistration/model/CourseTest.class

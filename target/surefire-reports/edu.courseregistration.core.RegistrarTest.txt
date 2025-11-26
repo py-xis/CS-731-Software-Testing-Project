@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: edu.courseregistration.core.RegistrarTest
+-------------------------------------------------------------------------------
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in edu.courseregistration.core.RegistrarTest

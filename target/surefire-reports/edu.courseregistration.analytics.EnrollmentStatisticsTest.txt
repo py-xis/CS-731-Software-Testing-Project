@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: edu.courseregistration.analytics.EnrollmentStatisticsTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in edu.courseregistration.analytics.EnrollmentStatisticsTest
